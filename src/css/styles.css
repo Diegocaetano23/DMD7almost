@@ -12,6 +12,8 @@
     }
 
         /** TOPNAV COM LOGO, LINKS E DROPDOWN **/
+
+
         .topnav {
             display: flex;
             justify-content: space-between;
@@ -24,8 +26,10 @@
             left: 0; /* Fica alinhado à esquerda da tela */
             width: 100%; /* Ocupa toda a largura da tela */
             z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+        
         }
 
+    
         
         
         .logo img {
@@ -45,6 +49,8 @@
             padding: 0 10px; /* Adiciona espaço interno aos links */
             margin: 0 20px; /* Adiciona espaço externo entre os links */
             font-style: italic;
+            font-size: 15px;
+          
         }
 
         
@@ -291,7 +297,7 @@
         /* WHAAP END */
 
 
-    /* Estilo da div .half */
+    /* Estilo da div . */
     .half {
         display: flex;
         flex-direction: row;
@@ -413,10 +419,13 @@
         text-decoration: none;
         border-radius: 5px;
         transition: background-color 0.3s ease;
+        transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
     .btn-orcamento:hover {
         background-color: #FF8C00; /* Cor mais escura ao passar o mouse */
+        transform: scale(1.1); /* Aumenta o tamanho do botão em 10% */
+  
     }
 
     /* FIM BOTÃO ORÇAMENTO*/
@@ -435,7 +444,7 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        background-color: #333; /* Cinza escuro */
+        background-color: #414040; /* Cinza escuro */
         color: #fff; /* Texto branco */
         padding: 20px;
     }
@@ -457,6 +466,7 @@
     .who-text {
         width: 100%;
         margin-left: 50px;
+        font-size: 18px;
     }
 
     @media (min-width: 768px) {
@@ -500,6 +510,15 @@
             display: block;
             width: 100%;
             margin-bottom: 20px;
+        }
+
+     
+    }
+
+    @media (max-width: 600px) {
+
+        .set .btn-orcamento {
+            text-align: center;
         }
     }
 
@@ -591,7 +610,10 @@
         .half-list h1{
             margin-top: 50px;
         }
-
+        
+        .contact h1{
+            margin-top: 20px;
+        }
 
     }
 
@@ -844,11 +866,12 @@
             background-repeat: no-repeat;
             background-position: center;
             height: 800px;
+            margin-top: -30px;
         
         }
 
         .logo img {
-            height: 80px;
+            height: 50px;
             margin-left: -15px;
         }
 
@@ -912,13 +935,14 @@
     @media (max-width: 320px) {
 
         .div1{
-            height: 450px;
+            height: 500px;
+            margin-bottom: -30px;
             
         }
 
         .div1 h2{
             padding: 0;
-            font-size: 19px;
+            font-size: 20px;
             margin-top: -40px;
             padding: 0px;
             width: 100%; /* Define a largura como 100% do contêiner pai */
@@ -930,9 +954,11 @@
             margin-bottom: -20px;
         }
 
-        .div1 .btn-orcamento{
-            margin-top: -70px;  
+
+        .div1 .logowhite{
+            margin-bottom: -8px;
         }
+
         
         .div1 p{
             font-size: 15px;
@@ -949,17 +975,28 @@
 
     /* fade up inicio */
 
-    .textos1 .itens-right{
+    .textos1, .experience-item, .half-list, .contact, .who-text, .half-image, .who-image, .gallery-container{
         opacity: 0; /* Inicialmente invisível */
         transform: translateY(20px); /* Inicialmente deslocado para baixo */
         transition: opacity 1s, transform 1s; /* Animação suave */
     }
 
-    .textos1.fade-in-up.visible .itens-right.textos1.fade-in-up.visible {
+    .textos1.fade-in-up.visible, .experience-item.fade-in-up.visible, .gallery-container.fade-in-up.visible, .who-image.fade-in-up.visible, .half-image.fade-in-up.visible, .half-list.fade-in-up.visible, .who-text.fade-in-up.visible, .contact.fade-in-up.visible{
         opacity: 1;
         transform: translateY(0); /* Movimento para a posição original */
     }
 
+ 
+    .itens-right {
+        opacity: 0; /* Inicialmente invisível */
+        transform: translateY(20px); /* Inicialmente deslocado para baixo */
+        transition: opacity 1s, transform 1s; /* Animação suave */
+    }
+
+    .itens-right.fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0); /* Movimento para a posição original */
+    }
     
  
 
@@ -972,3 +1009,172 @@
     }
 
     /* fade up fim */
+
+    /* GALLERY INICIO*/
+
+    .gallery-item h3{
+        margin-top: 15px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    
+.gallery-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item {
+    min-width: 33.33%; /* Mostra 3 itens em telas maiores */
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+}
+
+.gallery-item img {
+    width: 87%;
+    height: 87%; /* Altura fixa para todas as imagens */
+    object-fit: cover; /* Garante que a imagem preencha o contêiner mantendo a proporção */
+}
+
+@media (max-width: 600px) {
+    .gallery-item {
+        min-width: 100%; /* Mostra 1 item em telas menores */
+    }
+
+    .gallery-container .btn-orcamento{
+        margin-top: -15px;
+    }
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width: 600px){
+    .gallery-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        margin-top: 65px;
+        margin-bottom: 65px;
+    }
+
+    .gallery-container h1{
+        margin-bottom: 20px;
+    }
+
+}
+    /* GALLERY FIM*/
+
+    /*EXPERIENCE*/
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.experience {
+    background-color: #dddddd; /* Cinza claro */
+    padding: 20px;
+}
+
+.experience-item {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.experience-number {
+    font-size: 2em;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.experience-text {
+    font-size: 1em;
+}
+
+@media (min-width: 600px) {
+
+    
+.experience-number {
+    color: #414141;
+    font-size: 4em;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.experience-text {
+    font-size: 1em;
+    color: #414141;
+}
+
+
+
+    .experience {
+        background-color:#dddddd;    /* Cinza mais escuro */
+        display: flex;
+        flex-direction: row; /* Itens lado a lado */
+        justify-content: space-around;
+    }
+    
+    .experience-item {
+        flex-direction: column; /* Número em cima do texto */
+        align-items: center;
+    }
+}
+
+@media (max-width: 599px) {
+    .experience {
+        display: flex;
+        flex-direction: column; /* Itens um em cima do outro */
+        align-items: center;
+    }
+
+    .experience-item {
+        flex-direction: row; /* Número ao lado do texto */
+        justify-content: center;
+    }
+
+    .experience-number {
+        color: #414141;
+        font-size: 3em;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    
+    .experience-text {
+        font-size: 1em;
+        color: #414141;
+    }
+    
+}
+
+
+    /*experience fim*/
