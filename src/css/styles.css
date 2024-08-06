@@ -620,12 +620,31 @@
     /*INFOS*/
     .infos{
         background-color:#333;
-        color: white;
+        color: rgb(255, 255, 255);
         text-align: center;
         height: 80px;
     
     }
 
+    .infos-txt{
+        padding: 30px;
+        
+
+    }
+
+    .infos a {
+        text-decoration: none;
+        color: inherit;
+        text-decoration: underline;
+        font-style: italic;
+       
+    }
+    
+    .infos a:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+    
  
 
     /*INFOS end*/
