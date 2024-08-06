@@ -644,6 +644,18 @@
         text-decoration: none;
         color: inherit;
     }
+
+    @media (max-width: 600px) {
+
+        .infos-txt{
+            padding: 13px;
+        }
+
+        .infos-txt p{
+            font-size: 15px;
+        }
+
+    }
     
  
 
@@ -1197,6 +1209,12 @@ body {
 
     .keywords p {
         font-size: 10px;
+    }
+
+    @media (max-width: 600px) {
+        .keywords p{
+            font-size: 7px;
+        }
     }
 
     /*experience fim*/
