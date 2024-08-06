@@ -1,0 +1,974 @@
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        padding-top: 100px;
+    }
+
+        /** TOPNAV COM LOGO, LINKS E DROPDOWN **/
+        .topnav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: fixed; /* Torna o menu fixo no topo */
+            top: 0; /* Fica no topo da tela */
+            left: 0; /* Fica alinhado à esquerda da tela */
+            width: 100%; /* Ocupa toda a largura da tela */
+            z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+        }
+
+        
+        
+        .logo img {
+            height: 80px;
+            margin-left: 20px;
+        }
+
+        .top-links {
+            display: flex;
+            align-items: center;
+
+        }
+        
+        .top-links a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            padding: 0 10px; /* Adiciona espaço interno aos links */
+            margin: 0 20px; /* Adiciona espaço externo entre os links */
+            font-style: italic;
+        }
+
+        
+        .top-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .menu {
+            position: relative;
+        }
+        
+        .menu img {
+            height: 40px;
+            cursor: pointer;
+        }
+        
+
+        .menu img {
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+
+        @media (max-width: 600px) {
+            .top-links {
+                display: none;
+            }
+            
+        }
+
+
+        /* Estilo para o menu dropdown */
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown a {
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .dropdown a:hover {
+        background-color: #f1f1f1;
+    }
+
+    /* Exibir menu dropdown ao clicar no ícone do menu */
+    .menu.show .dropdown {
+        display: block;
+    }
+
+    /* Esconder os links em telas pequenas */
+    @media (max-width: 600px) {
+        .top-links {
+            display: none; /* Esconde links em telas pequenas */
+        }
+        .menu {
+            display: block; /* Exibe o menu dropdown */
+        }
+        .menu img {
+            display: block; /* Exibe o ícone de menu em telas pequenas */
+        }
+    }
+
+    /* Esconder ícone de menu em telas maiores */
+    @media (min-width: 601px) {
+        .menu img {
+            display: none; /* Esconde o ícone de menu em telas maiores */
+        }
+    }
+        /** TOPNAV COM LOGO, LINKS E DROPDOWN END **/
+
+        /* SLIDES */
+        * {box-sizing: border-box}
+        body {font-family: Verdana, sans-serif; margin:0}
+        .mySlides {display: none}
+        img {vertical-align: middle;}
+
+        /* Slideshow container */
+        .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Caption text */
+        .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+        background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+        .prev, .next,.text {font-size: 11px}
+        }
+        /* SLIDES END */
+
+        .services {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            flex-wrap: wrap;
+            
+        }
+
+        .services img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .small-screen-only {
+            display: none;
+        }
+
+        .large-screen-only {
+            display: block;
+        }
+
+       
+        @media (max-width: 600px) {
+            .small-screen-only {
+                display: block;
+            }
+            .large-screen-only {
+                display: none;
+            }
+        }
+
+
+
+        /*WHAAP*/
+
+        .whapp {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 80px; /* Ajuste o tamanho da imagem conforme necessário */
+            height: auto;
+            z-index: 1000; /* Garante que o ícone fique acima de outros elementos */
+        }
+
+        .whapp img {
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        /* WHAAP END */
+
+
+    /* Estilo da div .half */
+    .half {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .half-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .half-image {
+        flex: 1; /* Faz a imagem ocupar uma parte flexível do espaço disponível */
+        max-width: 47%;
+        height: auto;
+        border-radius: 20px;
+    
+    }
+
+    .half-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 50%; /* Ajuste a largura conforme necessário */
+    
+    }
+
+    .half-list li {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .half-list i.fas.fa-check {
+        color: #4caf50; /* Cor do ícone de check */
+        margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+    }
+
+    @media (min-width: 768px){
+
+        .half-image {
+            flex: 1; /* Faz a imagem ocupar uma parte flexível do espaço disponível */
+            max-width: 42%;
+            height: auto;
+            border-radius: 20px;
+            margin-left: 30px;
+            margin-bottom: 85px;
+        }
+        
+        .half-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 50%; /* Ajuste a largura conforme necessário */
+            margin-left: 30px;
+        
+        }
+
+    }
+
+    @media (max-width: 767px) {
+
+        .half-image {
+            flex: 1; /* Faz a imagem ocupar uma parte flexível do espaço disponível */
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            
+    
+        }
+
+        .half {
+            flex-direction: column;
+        }
+
+        .half-content {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .half-image {
+            width: 100%;
+        
+        }
+
+        .half-list {
+            width: 100%;
+            order: 2; /* Faz com que a lista apareça após a imagem */
+        }
+
+        .large-screen-only {
+            display: none; /* Esconde a imagem grande em telas pequenas */
+        }
+
+        .small-screen-only {
+            display: block; /* Exibe a imagem pequena em telas pequenas */
+            order: -1; /* Faz com que a imagem pequena apareça antes da lista */
+        }
+    }
+
+    /* BOTÃO ORÇAMENTO */
+
+    .btn-orcamento {
+        display: inline-block;
+        background-color: #FFA500;
+        color: #ffffff; /* Letra branca */
+        text-align: center;
+        text-decoration: none;
+        font-size: 19px;
+        font-weight: bold;
+        margin-top: 20px; /* Espaço acima do botão */
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-orcamento:hover {
+        background-color: #FF8C00; /* Cor mais escura ao passar o mouse */
+    }
+
+    /* FIM BOTÃO ORÇAMENTO*/
+
+    .fix-center {
+    text-align: center;
+    }
+
+
+
+    /* INÍCIO WHO */
+
+
+    /* WHO */
+    .who {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: #333; /* Cinza escuro */
+        color: #fff; /* Texto branco */
+        padding: 20px;
+    }
+
+    .who-image {
+        max-width: 100%;
+        height: auto;
+        margin-right: 30px;
+    }
+
+    .large-screen-only.who-image {
+        display: none;
+    }
+
+    .small-screen-only.who-image {
+        display: none;
+    }
+
+    .who-text {
+        width: 100%;
+        margin-left: 50px;
+    }
+
+    @media (min-width: 768px) {
+        .who {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .who-text {
+            width: 50%;
+        }
+
+        .large-screen-only.who-image {
+            display: block;
+            width: 37%;
+            order: 2; /* Garante que a imagem grande fique à direita */
+            border-radius: 20px;
+        }
+
+        .small-screen-only.who-image {
+            display: none;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .who {
+            flex-direction: column;
+        }
+
+        .who-text {
+            width: 100%;
+            margin: 10px 0;
+            
+        }
+
+        .large-screen-only.who-image {
+            display: none;
+        }
+
+        .small-screen-only.who-image {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+
+    /* FIM WHO*/
+
+
+    /* Estilo para a div contact */
+    .contact {
+        display: flex;
+        flex-direction: column; /* Alinha os itens verticalmente em telas pequenas */
+        gap: 20px; /* Espaçamento entre os itens */
+        padding: 20px; /* Espaçamento interno */
+    }
+
+    .contact h1 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    /* Remove a estilização de links dentro da .contact */
+    .contact p a {
+        text-decoration: none;
+        color: inherit; /* Faz com que a cor do texto siga a cor do parágrafo */
+    }
+
+    .contact p {
+        margin: 0; /* Remove a margem padrão dos parágrafos */
+    }
+
+    .contact-content {
+        display: flex; /* Alinha os itens horizontalmente em telas grandes */
+        gap: 20px; /* Espaçamento entre a lista de contatos e o mapa */
+        flex-wrap: wrap; /* Permite que o mapa e a lista se movam para novas linhas se necessário */
+    }
+
+    .contact-items {
+        flex: 1; /* Faz com que a lista de contatos ocupe o máximo de espaço possível */
+        display: flex;
+        flex-direction: column; /* Alinha os itens de contato verticalmente */
+        gap: 10px; /* Espaçamento entre os itens de contato */
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center; /* Alinha a imagem e o texto verticalmente no centro */
+        gap: 10px; /* Espaçamento entre a imagem e o texto */
+    }
+
+    .contact img {
+        width: 25px; /* Define a largura das imagens */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+
+    .contact-map {
+        flex: 1; /* Faz com que o mapa ocupe o máximo de espaço possível */
+        max-width: 600px; /* Define uma largura máxima para o mapa em telas grandes */
+        margin-right: 100px;
+    }
+
+    .contact iframe {
+        width: 100%; /* Faz o iframe se ajustar ao tamanho da div */
+        height: auto; /* Ajusta a altura proporcionalmente */
+        border: 0; /* Remove a borda do iframe */
+    }
+
+    /* Ajuste para telas pequenas */
+    @media (max-width: 600px) {
+        .contact-map {
+            max-width: 100%; /* Faz o mapa ocupar a largura total disponível */
+            margin: 10px; /* Adiciona uma margem leve em torno do mapa */
+        }
+
+        .contact-content {
+            flex-direction: column; /* Alinha os itens verticalmente em telas pequenas */
+        }
+
+        .contact-map iframe {
+            height: 300px; /* Ajusta a altura do iframe em telas pequenas */
+        }
+    }
+
+    /* Margem esquerda para contact-items em telas maiores que 600px */
+    @media (min-width: 601px) {
+        .contact-items {
+            margin-left: 150px;
+        }
+
+        .half-list h1{
+            margin-top: 50px;
+        }
+
+
+    }
+
+    /*INFOS*/
+    .infos{
+        background-color:#333;
+        color: white;
+        text-align: center;
+        height: 80px;
+    
+    }
+
+ 
+
+    /*INFOS end*/
+
+    /*rolagem*/
+    html {
+        scroll-behavior: smooth;
+    }
+    /* roalgem end */
+
+    /*div1*/
+
+    .div1{
+        background-color: #316879;
+        color: white;
+        height: 500px;
+    }
+
+
+
+    /*END DIV1*/
+
+
+    /* Estilos da primeira seção */
+    .div1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-image: url('./src/css/img/back1.png');
+        background-size: cover;
+        height: 80vh;
+    }
+
+    .left-side {
+        width: 50%;
+        color: white;
+        padding: 20px;
+    }
+
+    .right-side {
+        width: 50%;
+        text-align: center;
+        position: relative;
+    }
+
+    .right-side .logowhite {
+        max-width: 250px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+
+    @media screen and (max-width: 768px) {
+        .div1 {
+            flex-direction: column;
+            height: auto;
+        }
+        
+        .left-side, .right-side {
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 1024px) {
+
+        .left-side {
+            width: 50%;
+            color: white;
+            padding: 80px;
+        }
+        
+    }
+
+        .left-side h2{
+
+            font-size: 35px;
+        }
+
+        .left-side p {
+            font-size: 20px;
+        }
+        
+
+        /* ADICIONADO AGORA  PARA AJUSTAR 768PX E 1024PX, DEIXAR O BOTAO E O LOGO NO LADO DIREITO TBM.*/
+        /* CONTÉM REPETIÇÕES MAS OK, FOI ADICIONADO PARA REGULAR A 768 EM TER O LOGOWHITE E BOTAO AO LADO DIREITO TBM IGUAL JA ESTAVA EM 1024*/
+
+    .div1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+    }
+
+    .div1 .left-side {
+        margin-bottom: 20px;
+    }
+
+    .div1 .right-side {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .div1 .logowhite {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+
+
+    .half {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .half-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .half-image {
+        width: 100%;
+    }
+
+    .half-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        max-width: 500px;
+    }
+
+    .half-list .title-small-screen {
+        display: none;
+    }
+
+    .half-list li {
+        margin: 10px 0;
+    }
+
+    .half-list i {
+        color: #FFA500;
+        margin-right: 10px;
+    }
+
+    .fix-center {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+
+
+    @media (min-width: 768px) {
+        .div1 {
+            flex-direction: row;
+            text-align: left;
+        }
+
+        .div1 .left-side,
+        .div1 .right-side {
+            flex: 1;
+        }
+
+        .half {
+            flex-direction: row;
+        }
+
+        .half-content {
+            flex-direction: row;
+        }
+
+        .half-image {
+            width: 50%;
+        }
+
+        .half-list {
+            max-width: 50%;
+        }
+
+        .itens-right{
+            margin-bottom: 80px;
+        }
+
+    }
+
+    @media (max-width: 767px) {
+
+
+        .half-content {
+            flex-direction: column;
+        }
+
+        .half-image {
+            display: none;
+        }
+
+        .half-list .title-small-screen {
+            display: block;
+        }
+
+    }
+
+    /*END ADICIONADO AGORA PARA AJUSTAR O MEIO A MEIO*/
+
+    /* INICIO DE: AJUSTE DE BACKGROUND , TELA GRANDE E PEQUENA */
+
+
+
+    /* styles.css */
+
+    /* Estilo padrão para telas acima de 600px */
+    .div1 {
+        background-image: url('./img/background1.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 0px;
+        width: 100%;
+    }
+
+    /* Estilo para telas abaixo de 600px */
+    @media (max-width: 600px) {
+        .div1 {
+            background-image: url('./img/background-small1.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 800px;
+        
+        }
+
+        .logo img {
+            height: 80px;
+            margin-left: -15px;
+        }
+
+      
+
+
+
+
+    }
+
+    @media (max-width: 425px) {
+
+        .div1{
+            height: 610px;
+        }
+
+        .div1 h2{
+            padding: 0;
+            font-size: 27px;
+    
+        }
+
+        .div1 .btn-orcamento{
+            margin-top: -35px;
+        }
+        
+        .div1 p{
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+
+    }
+
+    @media (max-width: 375px) {
+
+        .div1{
+            height: 610px;
+        }
+
+        .div1 h2{
+            padding: 0;
+            font-size: 23px;
+        margin-top: -35px;
+    
+        }
+
+        .div1 .btn-orcamento{
+            margin-top: -35px;
+        }
+        
+        .div1 p{
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+
+    }
+
+
+    @media (max-width: 320px) {
+
+        .div1{
+            height: 450px;
+            
+        }
+
+        .div1 h2{
+            padding: 0;
+            font-size: 19px;
+            margin-top: -40px;
+            padding: 0px;
+            width: 100%; /* Define a largura como 100% do contêiner pai */
+    
+        }
+
+        .div1 h4{
+
+            margin-bottom: -20px;
+        }
+
+        .div1 .btn-orcamento{
+            margin-top: -70px;  
+        }
+        
+        .div1 p{
+            font-size: 15px;
+            margin-bottom: 10px;
+        
+        }
+
+        .textos1{
+            padding: 0px;
+        
+        }
+    }
+
+
+    /* fade up inicio */
+
+    .textos1 .itens-right{
+        opacity: 0; /* Inicialmente invisível */
+        transform: translateY(20px); /* Inicialmente deslocado para baixo */
+        transition: opacity 1s, transform 1s; /* Animação suave */
+    }
+
+    .textos1.fade-in-up.visible .itens-right.textos1.fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0); /* Movimento para a posição original */
+    }
+
+    
+ 
+
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0); /* Movimento para a posição original */
+        }
+    }
+
+    /* fade up fim */
